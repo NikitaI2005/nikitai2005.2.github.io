@@ -1,0 +1,47 @@
+<html>
+    <body>
+      <script>
+  
+        var lijstgetallen = new Array(50);
+    
+        // mapjes
+        var gekozengetal, aantal, getal, i, plek;
+    
+        // Gaat door tot alle 50 vakjes zijn gevuld.
+        for (aantal = 0; aantal <= 49; aantal++) {
+    
+
+            // Computer kiest een getal
+            getal = Math.floor(Math.random() * 100);
+    
+            // Gekozen getal in de mapjes
+            lijstgetallen[aantal] = getal;
+        }
+        
+        alert(lijstgetallen);
+        window.alert("Welk getal zoek je? " + "kies 0-100.");
+        gekozengetal = Number(window.prompt('Enter a value for gekozengetal'));
+    
+        // nulpunt
+        i = 0;
+        while (i == 0) {
+            for (aantal = 0; aantal <= 49; aantal++) {
+                if (lijstgetallen[aantal] == gekozengetal) {
+                    i = 10;
+                    plek = aantal;
+                } else {
+                    if (aantal == 49 && i == 0) {
+                        i = 11;
+                    }
+                }
+            }
+        }
+        if (i == 10) {
+            window.alert("Nummer " + gekozengetal + " staat erin op plek " + plek);
+        } else {
+            window.alert("Nummer " + gekozengetal + " staat er niet in.");
+        }
+    
+  </script>
+    </body>
+</html>
